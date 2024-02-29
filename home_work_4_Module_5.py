@@ -3,8 +3,13 @@ def input_error(func):
         try:
             return func(*args, **kwargs)
         # роблю обробку певних помилок,які були вказані в умові завдяки обробнику try except,та вивожу їх користувачу як підказку,якщо він ввів щось неправильно
-        except (KeyError,IndexError,ValueError):
-            return "Enter the argument for the command"
+        except ValueError:
+            return "Give me name and phone please"
+        except KeyError:
+            return "Enter username pleas."
+        except IndexError:
+            return "Give me name and phone please"
+      
 
     return inner
 
